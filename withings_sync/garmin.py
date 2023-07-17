@@ -92,6 +92,8 @@ class GarminConnect:
             headers=headers,
         )
 
+        print(ssoresp)
+
         if ssoresp.status_code == 429:
             raise APIException(
                 "SSO error 429: You are being rate limited: "
