@@ -84,7 +84,7 @@ def get_args():
         "--garmin-mfa",
         "--gm",
         default=False,
-        type=str,
+        type=bool,
         metavar="GARMIN_MFA",
         help="Flag for if MFA is enabled",
     )
