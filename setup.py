@@ -28,7 +28,7 @@ setup(
     ],
     install_requires=["lxml", "requests", "cloudscraper"],
     entry_points={
-        "console_scripts": ["withings-sync=withings_sync.sync:main"],
+        "console_scripts": ["withings-sync2=withings_sync.sync:main"],
     },
     zip_safe=False,
     include_package_data=True,
