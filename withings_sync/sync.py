@@ -494,5 +494,3 @@ def main():
         sys.exit(1)
 
     sync()
-
-main()
