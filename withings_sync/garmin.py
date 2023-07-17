@@ -178,7 +178,7 @@ class GarminConnect:
             log.debug(" %s = %s", key, value)
 
     @staticmethod
-    def login(username, password):
+    def login(username, password, mfa_enabled):
         """login to Garmin"""
         log.info("GETTING SESSION..")
         session = GarminConnect.get_session(email=username, password=password)
