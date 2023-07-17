@@ -8,10 +8,10 @@ import json
 
 from datetime import date, datetime
 
-from withings2 import WithingsAccount
-from garmin import GarminConnect
-from trainerroad import TrainerRoad
-from fit import FitEncoderWeight, FitEncoderBloodPressure
+from withings_sync.withings2 import WithingsAccount
+from withings_sync.garmin import GarminConnect
+from withings_sync.trainerroad import TrainerRoad
+from withings_sync.fit import FitEncoderWeight, FitEncoderBloodPressure
 
 try:
     with open("/run/secrets/garmin_username", encoding="utf-8") as secret:
@@ -494,3 +494,4 @@ def main():
         sys.exit(1)
 
     sync()
+
