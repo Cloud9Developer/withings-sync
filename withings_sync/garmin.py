@@ -92,7 +92,8 @@ class GarminConnect:
             headers=headers,
         )
 
-        print(ssoresp.text)
+        print("ssoresp.text: ")
+        print(ssoresp.raw)
         # if mfa_enabled:
         #     ssoresp = session.post(
         #     "https://sso.garmin.com/sso/login",
