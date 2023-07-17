@@ -50,7 +50,7 @@ class GarminConnect:
 
     # From https://github.com/cpfair/tapiriik
     @staticmethod
-    def get_session(email=None, password=None):
+    def get_session(mfa_enabled, email=None, password=None):
         """tapiriik get_session code"""
         session = cloudscraper.CloudScraper()
 
@@ -88,7 +88,7 @@ class GarminConnect:
             "https://sso.garmin.com/sso/login",
             params=params,
             data=data,
-            allow_redirects=False,
+            allow_redirects=mfa_enabled,
             headers=headers,
         )
 
@@ -181,7 +181,7 @@ class GarminConnect:
     def login(username, password, mfa_enabled):
         """login to Garmin"""
         log.info("GETTING SESSION..")
-        session = GarminConnect.get_session(email=username, password=password)
+        session = GarminConnect.get_session(mfa_enabled, email=username, password=password)
         try:
             log.info(session)
             dashboard = session.get("http://connect.garmin.com/modern")
