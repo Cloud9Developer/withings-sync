@@ -88,7 +88,7 @@ class GarminConnect:
             "https://sso.garmin.com/sso/login",
             params=params,
             data=data,
-            allow_redirects=False,
+            allow_redirects=True,
             headers=headers,
         )
 

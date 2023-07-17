@@ -81,6 +81,15 @@ def get_args():
     )
 
     parser.add_argument(
+        "--garmin-mfa",
+        "--gm",
+        default=False,
+        type=str,
+        metavar="GARMIN_MFA",
+        help="Flag for if MFA is enabled",
+    )
+
+    parser.add_argument(
         "--trainerroad-username",
         "--tu",
         default=TRAINERROAD_USERNAME,
@@ -159,7 +168,7 @@ def get_args():
 def sync_garmin(fit_file):
     """Sync generated fit file to Garmin Connect"""
     garmin = GarminConnect()
-    session = garmin.login(ARGS.garmin_username, ARGS.garmin_password)
+    session = garmin.login(ARGS.garmin_username, ARGS.garmin_password, ARGS.garmin_mfa)
     return garmin.upload_file(fit_file.getvalue(), session)
 
 
@@ -478,6 +487,7 @@ def sync():
 
 
 ARGS = get_args()
+print(ARGS)
 
 
 def main():
