@@ -171,7 +171,6 @@ def sync_garmin(fit_file):
     session = garmin.login(ARGS.garmin_username, ARGS.garmin_password, ARGS.garmin_mfa)
     return garmin.upload_file(fit_file.getvalue(), session)
 
-
 def sync_trainerroad(last_weight):
     """Sync measured weight to TrainerRoad"""
     t_road = TrainerRoad(ARGS.trainerroad_username, ARGS.trainerroad_password)
