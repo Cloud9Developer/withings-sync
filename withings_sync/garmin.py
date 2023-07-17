@@ -93,6 +93,14 @@ class GarminConnect:
         )
 
         print(ssoresp.text)
+        # if mfa_enabled:
+        #     ssoresp = session.post(
+        #     "https://sso.garmin.com/sso/login",
+        #     params=params,
+        #     data=data,
+        #     allow_redirects=mfa_enabled,
+        #     headers=headers,
+        # )
 
         if ssoresp.status_code == 429:
             raise APIException(
