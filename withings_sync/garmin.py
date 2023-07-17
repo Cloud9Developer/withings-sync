@@ -180,6 +180,7 @@ class GarminConnect:
     @staticmethod
     def login(username, password):
         """login to Garmin"""
+        log.info("GETTING SESSION..")
         session = GarminConnect.get_session(email=username, password=password)
         try:
             log.info(session)
