@@ -182,6 +182,7 @@ class GarminConnect:
         """login to Garmin"""
         session = GarminConnect.get_session(email=username, password=password)
         try:
+            log.info(session)
             dashboard = session.get("http://connect.garmin.com/modern")
             userdata = GarminConnect.get_json(dashboard.text, "VIEWER_SOCIAL_PROFILE")
             username = userdata["displayName"]
