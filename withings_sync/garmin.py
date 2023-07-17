@@ -92,7 +92,7 @@ class GarminConnect:
             headers=headers,
         )
 
-        print(ssoresp)
+        print(ssoresp.text)
 
         if ssoresp.status_code == 429:
             raise APIException(
